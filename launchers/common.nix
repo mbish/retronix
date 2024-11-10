@@ -5,7 +5,7 @@
   ...
 }: let
   inherit (config) retronix;
-  moltengamepadCmd = cmd: "${pkgs.moltengamepadctl}/bin/moltengamepadctl --socket ${retronix.input-managers.moltengamepad.socketPath} -e ${cmd}";
+  moltengamepadCmd = cmd: "${pkgs.moltengamepadctl}/bin/moltengamepadctl --socket ${retronix.input-managers.moltengamepad.socketPath} -e \"${cmd}\"";
 in rec {
   moltengamepadPreHooks = systemName:
     if retronix.input-managers.moltengamepad.enable
