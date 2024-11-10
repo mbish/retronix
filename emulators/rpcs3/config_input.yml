@@ -1,0 +1,28 @@
+Player 1 Input:
+  Handler: Evdev
+  Device: 4. Virtual Gamepad (MoltenGamepad)
+  Profile: Virtual Gamepad
+Player 2 Input:
+  Handler: Evdev
+  Device: 3. Virtual Gamepad (MoltenGamepad)
+  Profile: Virtual Gamepad
+Player 3 Input:
+  Handler: Evdev
+  Device: 2. Virtual Gamepad (MoltenGamepad)
+  Profile: Virtual Gamepad
+Player 4 Input:
+  Handler: Evdev
+  Device: Virtual Gamepad (MoltenGamepad)
+  Profile: Virtual Gamepad
+Player 5 Input:
+  Handler: "Null"
+  Device: "Null"
+  Profile: Default Profile
+Player 6 Input:
+  Handler: "Null"
+  Device: "Null"
+  Profile: Default Profile
+Player 7 Input:
+  Handler: "Null"
+  Device: "Null"
+  Profile: Default Profile
