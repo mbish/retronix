@@ -84,18 +84,36 @@ in
             "PCSX2/bios/.exists".text = "";
             "${savePath}/memcards/.exists".text = "";
             "${savePath}/sstates/.exists".text = "";
-            "PCSX2/PCSX2-reg.ini".source = reg-ini;
-            "PCSX2/inis/PCSX2_ui.ini".source = ui-ini;
-            "PCSX2/inis/PCSX2_vm.ini".source = vm-ini;
-            "PCSX2/inis/PAD.ini".source = pad-ini;
-            "PCSX2/inis/PCSX2.ini".source = pcsx2-ini;
+            "PCSX2/PCSX2-reg.ini" = {
+              source = reg-ini;
+              force = cfg.forceOverwrites;
+            };
+            "PCSX2/inis/PCSX2_ui.ini" = {
+              source = ui-ini;
+              force = cfg.forceOverwrites;
+            };
+            "PCSX2/inis/PCSX2_vm.ini" = {
+              source = vm-ini;
+              force = cfg.forceOverwrites;
+            };
+            "PCSX2/inis/PAD.ini" = {
+              source = pad-ini;
+              force = cfg.forceOverwrites;
+            };
+            "PCSX2/inis/PCSX2.ini" = {
+              source = pcsx2-ini;
+              force = cfg.forceOverwrites;
+            };
           };
         }
         (mkIf
           (cfg.bios != null)
           {
             home.file = {
-              "${config.xdg.configHome}/PCSX2/bios/bios.bin".source = cfg.bios;
+              "${config.xdg.configHome}/PCSX2/bios/bios.bin" = {
+                source = cfg.bios;
+                force = cfg.forceOverwrites;
+              };
             };
           })
       ]);

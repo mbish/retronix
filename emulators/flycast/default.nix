@@ -61,7 +61,10 @@ in
           in
             mkMerge ([
                 {
-                  "flycast/emu.cfg".source = config-file;
+                  "flycast/emu.cfg" = {
+                    source = config-file;
+                    force = cfg.forceOverwrites;
+                  };
                 }
               ]
               ++ mappings);

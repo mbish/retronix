@@ -9,55 +9,57 @@
   retronix = config.retronix;
 in
   with lib; {
-    options.retronix.emulators.rpcs3 = {
-      enable = mkEnableOption "RPCS3 retronix configuration";
-      config-input = mkOption {
-        type = types.path;
-        description = "Input configuration file";
-        default = ./config_input.yml;
-      };
-      config = mkOption {
-        type = types.path;
-        description = "System configuration file";
-        default = ./config.yml;
-      };
-      firmware = mkOption {
-        type = types.path;
-        description = "PS3 firmware file";
-      };
-      mappings = mkOption {
-        type = with types;
-          listOf (submodule {
-            options = {
-              name = mkOption {
-                type = types.str;
-                example = "generic controller";
+    options.retronix.emulators.rpcs3 =
+      subtypes.emulationSubmodule
+      // {
+        enable = mkEnableOption "RPCS3 retronix configuration";
+        config-input = mkOption {
+          type = types.path;
+          description = "Input configuration file";
+          default = ./config_input.yml;
+        };
+        config = mkOption {
+          type = types.path;
+          description = "System configuration file";
+          default = ./config.yml;
+        };
+        firmware = mkOption {
+          type = types.path;
+          description = "PS3 firmware file";
+        };
+        mappings = mkOption {
+          type = with types;
+            listOf (submodule {
+              options = {
+                name = mkOption {
+                  type = types.str;
+                  example = "generic controller";
+                };
+                config = mkOption {
+                  type = types.path;
+                  description = "YAML file for control configuration";
+                };
               };
-              config = mkOption {
-                type = types.path;
-                description = "YAML file for control configuration";
-              };
-            };
-          });
-        description = "A set of 'mapping' files for RPCS3 controller configurations";
-        default = [
-          {
-            name = "Virtual Gamepad";
-            config = ./VirtualGamepad.yml;
-          }
-          {
-            name = "Default";
-            config = ./default_input.yml;
-          }
-        ];
+            });
+          description = "A set of 'mapping' files for RPCS3 controller configurations";
+          default = [
+            {
+              name = "Virtual Gamepad";
+              config = ./VirtualGamepad.yml;
+            }
+            {
+              name = "Default";
+              config = ./default_input.yml;
+            }
+          ];
+        };
+        systems = mkOption {
+          default = ["ps3"];
+        };
+        launchCommand = mkOption {
+          default = "${pkgs.rpcs3}/bin/rpcs3 --no-gui {{gamedir}}/{{basename}}";
+        };
       };
-      systems = mkOption {
-        default = ["ps3"];
-      };
-      launchCommand = mkOption {
-        default = "${pkgs.rpcs3}/bin/rpcs3 --no-gui {{gamedir}}/{{basename}}";
-      };
-    };
 
     config = let
       savePath = "${retronix.saveDirectory}/rpcs3";

@@ -60,6 +60,11 @@ in
       inputs = mkOption {
         type = types.anything;
       };
+      forceOverwrites = mkOption {
+        type = types.bool;
+        description = "Force overwrite of emulation configuration files";
+        default = false;
+      };
     };
     # how can we support different rom manager backends?
     # dat files can all get put onto retronix.dats which can then be parsed by the manager

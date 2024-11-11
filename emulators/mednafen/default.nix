@@ -63,7 +63,10 @@ in
           home.file = mkMerge (
             [
               {
-                "${configDirectory}/mednafen.cfg".source = configFile;
+                "${configDirectory}/mednafen.cfg" = {
+                  source = configFile;
+                  force = cfg.forceOverwrites;
+                };
               }
             ]
             ++ (map (x: {"${configDirectory}/${x.core}.cfg".text = x.config;}) cfg.systemOverrides)

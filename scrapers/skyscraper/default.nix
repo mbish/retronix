@@ -29,7 +29,7 @@ in
         description = "Skyscraper region for scraping";
       };
       sources = mkOption {
-        type = types.listOf types.str;
+        type = types.listOf (types.enum ["arcadedb" "openretro" "screenscraper" "igdb" "mobygames"]);
         default = ["arcadedb" "openretro" "screenscraper" "igdb" "mobygames"];
         description = "List of sources to scrape from";
       };

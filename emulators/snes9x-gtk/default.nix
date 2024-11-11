@@ -11,20 +11,22 @@
   retronix = config.retronix;
 in
   with lib; {
-    options.retronix.emulators.snes9x-gtk = {
-      enable = mkEnableOption "Snes9x-Gtk personal configuration";
-      config = mkOption {
-        type = types.path;
-        description = "Snes9x configuration file";
-        default = ./snes9x-gtk.conf;
+    options.retronix.emulators.snes9x-gtk =
+      subtypes.emulationSubmodule
+      // {
+        enable = mkEnableOption "Snes9x-Gtk personal configuration";
+        config = mkOption {
+          type = types.path;
+          description = "Snes9x configuration file";
+          default = ./snes9x-gtk.conf;
+        };
+        systems = mkOption {
+          default = ["snes"];
+        };
+        launchCommand = mkOption {
+          default = "${snes9x}/bin/snes9x-gtk {{gamepath}}";
+        };
       };
-      systems = mkOption {
-        default = ["snes"];
-      };
-      launchCommand = mkOption {
-        default = "${snes9x}/bin/snes9x-gtk {{gamepath}}";
-      };
-    };
 
     config = let
       configFile = utils.templateFile "snes9x-gtk.conf" cfg.config {
