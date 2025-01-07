@@ -2,12 +2,12 @@
   lib,
   pkgs,
   config,
-  utils,
   ...
 }: let
   cfg = config.retronix.emulators.pcsx2;
   subtypes = import ../common-subtypes.nix {inherit lib config;};
   retronix = config.retronix;
+  retronix-utils = import ../../lib {inherit pkgs;};
 in
   with lib; {
     options.retronix.emulators.pcsx2 =
@@ -63,11 +63,11 @@ in
       };
     config = let
       savePath = "${retronix.saveDirectory}/PCSX2";
-      reg-ini = utils.templateFile "PCSX2-reg.ini" cfg.reg-ini {
+      reg-ini = retronix-utils.templateFileToFile "PCSX2-reg.ini" cfg.reg-ini {
         configPath = cfg.configPath;
         installPath = cfg.pkg;
       };
-      ui-ini = "${utils.templateFile "GSdx.ini" cfg.ui-ini {
+      ui-ini = "${retronix-utils.templateFileToFile "GSdx.ini" cfg.ui-ini {
         inherit savePath;
         configPath = cfg.configPath;
         installPath = cfg.pkg;

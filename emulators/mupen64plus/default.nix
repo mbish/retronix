@@ -2,12 +2,12 @@
   config,
   pkgs,
   lib,
-  utils,
   ...
 }: let
   cfg = config.retronix.emulators.mupen64plus;
   retronix = config.retronix;
   subtypes = import ../common-subtypes.nix {inherit lib config;};
+  retronix-utils = import ../../lib {inherit pkgs;};
 in
   with lib; {
     options.retronix.emulators.mupen64plus =
@@ -42,7 +42,7 @@ in
       };
 
     config = let
-      mupen64plusConfig = utils.templateFile "mupen64plus.cfg" cfg.config {
+      mupen64plusConfig = retronix-utils.templateFileToFile "mupen64plus.cfg" cfg.config {
         inherit (cfg) sharedData;
         savePath = "${retronix.saveDirectory}/mupen64plus";
       };

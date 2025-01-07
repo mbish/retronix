@@ -18,6 +18,7 @@
     };
   };
   sources = inputs;
+  retronix-utils = import ../../lib {inherit pkgs;};
 in
   with lib; {
     imports = [

@@ -2,12 +2,12 @@
   config,
   pkgs,
   lib,
-  utils,
   ...
 }: let
   cfg = config.retronix.emulators.dolphin;
   retronix = config.retronix;
   subtypes = import ../common-subtypes.nix {inherit lib config;};
+  retronix-utils = import ../../lib {inherit pkgs;};
 in
   with lib; {
     options.retronix.emulators.dolphin =
@@ -59,7 +59,7 @@ in
 
     config = let
       paths = concatMap (s: retronix.systems.${s}.romPaths) cfg.systems;
-      dolphinConfig = utils.templateFile "Dolphin.ini" cfg.dolphin-ini {
+      dolphinConfig = retronix-utils.templateFileToFile "Dolphin.ini" cfg.dolphin-ini {
         savePath = "${retronix.saveDirectory}/dolphin-emu";
         isoPaths =
           builtins.concatStringsSep "\n"

@@ -2,13 +2,13 @@
   config,
   pkgs,
   lib,
-  utils,
   ...
 }: let
   cfg = config.retronix.emulators.mednafen;
   configDirectory = "${config.xdg.configHome}/mednafen";
   subtypes = import ../common-subtypes.nix {inherit lib config;};
   retronix = config.retronix;
+  retronix-utils = import ../../lib {inherit pkgs;};
 in
   with lib; {
     options.retronix.emulators.mednafen =
@@ -51,7 +51,7 @@ in
         };
       };
     config = let
-      configFile = utils.templateFile "main.cfg" cfg.config {
+      configFile = retronix-utils.templateFileToFile "main.cfg" cfg.config {
         savePath = "${retronix.saveDirectory}/mednafen";
         biosPath = cfg.psxBiosPath;
       };

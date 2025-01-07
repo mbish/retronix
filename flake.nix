@@ -41,6 +41,7 @@
   };
 
   outputs = {nixpkgs, ...} @ inputs: let
+    utils = import ./lib;
     forAllSystems = f: nixpkgs.lib.genAttrs systems f;
     systems = [
       "x86_64-linux"
@@ -49,24 +50,30 @@
     homeManagerModules = rec {
       retronix = import ./default.nix {
         inherit inputs;
+        retronix-utils = utils;
       };
       default = retronix;
     };
-    overlays = forAllSystems (system: rec {
-      retronix = let
-        inherit (nixpkgs) lib;
-        pkgs = import inputs.nixpkgs {inherit system;};
-      in
-        _: prev: {
-          gamelauncher = inputs.gamelauncher.packages."${system}".default;
-          moltengamepad = inputs.moltengamepad.packages."${system}".default;
-          moltengamepadctl = inputs.moltengamepadctl.packages."${system}".default;
-          mp64-convert = import ./derivations/ra_mp64_srm_convert {inherit pkgs inputs system;};
-          oxyromon = import ./derivations/oxyromon {inherit pkgs lib inputs;};
-          pegasus-frontend = import ./derivations/pegasus-frontend {inherit pkgs lib inputs;};
-          skyscraper = import ./derivations/skyscraper {inherit pkgs lib inputs;};
-        };
-      default = retronix;
-    });
+    overlays = forAllSystems (
+      system: (
+        let
+          inherit (nixpkgs) lib;
+          pkgs = import inputs.nixpkgs {
+            inherit system;
+            overlays = [
+            ];
+          };
+        in
+          _: prev: {
+            gamelauncher = inputs.gamelauncher.packages."${system}".default;
+            moltengamepad = inputs.moltengamepad.packages."${system}".default;
+            moltengamepadctl = inputs.moltengamepadctl.packages."${system}".default;
+            mp64-convert = import ./derivations/ra_mp64_srm_convert {inherit pkgs inputs system;};
+            oxyromon = import ./derivations/oxyromon {inherit pkgs lib inputs;};
+            pegasus-frontend = import ./derivations/pegasus-frontend {inherit pkgs lib inputs;};
+            skyscraper = import ./derivations/skyscraper {inherit pkgs lib inputs;};
+          }
+      )
+    );
   };
 }

@@ -102,16 +102,16 @@
     "mp64-convert": {
       "flake": false,
       "locked": {
-        "lastModified": 1696704512,
-        "narHash": "sha256-7tlIWW2matZ7MXgDze7Bp/zq20MXyKiTV/a2ZBDU5/Q=",
+        "lastModified": 1680065355,
+        "narHash": "sha256-8vaFEKEmlEYbGMntNDTiIa2rRK9euXgCvYlDihn/O+E=",
         "owner": "drehren",
         "repo": "ra_mp64_srm_convert",
-        "rev": "25fdccb9e4cd195b9ed364553de25ec3966c5e47",
+        "rev": "d8f59d5875896b7e9cc1dc4b5f5df087804f7378",
         "type": "github"
       },
       "original": {
         "owner": "drehren",
-        "ref": "v1.1",
+        "ref": "v1.0",
         "repo": "ra_mp64_srm_convert",
         "type": "github"
       }

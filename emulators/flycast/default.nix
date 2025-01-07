@@ -2,12 +2,12 @@
   config,
   pkgs,
   lib,
-  utils,
   ...
 }: let
   cfg = config.retronix.emulators.flycast;
   subtypes = import ../common-subtypes.nix {inherit lib config;};
   retronix = config.retronix;
+  retronix-utils = import ../../lib {inherit pkgs;};
 in
   with lib; {
     options.retronix.emulators.flycast =
@@ -49,7 +49,7 @@ in
       };
 
     config = let
-      config-file = utils.templateFile "emu.cfg" cfg.emu-cfg {
+      config-file = retronix-utils.templateFileToFile "emu.cfg" cfg.emu-cfg {
         romPath = head retronix.systems.dreamcast.romPaths;
       };
     in

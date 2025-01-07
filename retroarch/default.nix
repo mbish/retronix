@@ -2,11 +2,11 @@
   lib,
   config,
   pkgs,
-  utils,
   ...
 }: let
   cfg = config.retronix.retroarch;
   retronix = config.retronix;
+  retronix-utils = import ../lib {inherit pkgs;};
 in
   with lib; {
     options.retronix.retroarch = {
@@ -52,11 +52,11 @@ in
     };
     config = let
       mappingDir = "${config.xdg.configHome}/retroarch/autoconfig/udev";
-      configFile = utils.templateFile "retroarch.cfg" ./retroarch.cfg {
+      configFile = retronix-utils.templateFileToFile "retroarch.cfg" ./retroarch.cfg {
         inherit (cfg) configPath;
         savePath = "${retronix.saveDirectory}/retroarch";
-        retroarchPath = pkgs.retroarch;
-        libretroPath = pkgs.libretro-core-info;
+        retroarchPath = "${pkgs.retroarch}";
+        libretroPath = "${pkgs.libretro-core-info}";
       };
     in
       mkIf cfg.enable {

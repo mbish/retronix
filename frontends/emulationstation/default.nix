@@ -1,10 +1,10 @@
 {
   config,
-  pkgs,
   lib,
-  utils,
+  pkgs,
   ...
 }: let
+  retronix-utils = import ../../lib {inherit pkgs;};
   inputConfig = with lib;
   with types;
     submodule {
@@ -384,7 +384,7 @@ in
             ${builtins.concatStringsSep "\n" (map systemToString cfg.systems)}
             </systemList>
           '';
-          ".emulationstation/es_settings.cfg".source = utils.templateFile "es_settings.cfg" ./es_settings.cfg {
+          ".emulationstation/es_settings.cfg".source = retronix-utils.templateFileToFile "es_settings.cfg" ./es_settings.cfg {
             configDir = "${config.home.homeDirectory}/.emulationstation";
             themeName = cfg.theme.name;
           };

@@ -2,13 +2,13 @@
   config,
   pkgs,
   lib,
-  utils,
   ...
 }: let
   cfg = config.retronix.emulators.snes9x-gtk;
   snes9x = pkgs.snes9x.override {withGtk = true;};
   subtypes = import ../common-subtypes.nix {inherit lib config;};
   retronix = config.retronix;
+  retronix-utils = import ../../lib {inherit pkgs;};
 in
   with lib; {
     options.retronix.emulators.snes9x-gtk =
@@ -29,7 +29,7 @@ in
       };
 
     config = let
-      configFile = utils.templateFile "snes9x-gtk.conf" cfg.config {
+      configFile = retronix-utils.templateFileToFile "snes9x-gtk.conf" cfg.config {
         romPath = head retronix.systems.snes.romPaths;
         savePath = "${retronix.saveDirectory}/snes9x";
       };
