@@ -20,9 +20,6 @@ in
           description = "The full mednafen.cfg configuration";
           default = ./main.cfg;
         };
-        test = mkOption {
-          type = types.listOf types.str;
-        };
         systemOverrides = mkOption {
           type = with types;
             listOf (submodule {

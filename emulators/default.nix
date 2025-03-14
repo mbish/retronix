@@ -8,14 +8,16 @@
 in
   with lib; {
     imports = [
-      ./pcsx2
+      ./ares
+      ./dolphin
       ./flycast
       ./mednafen
-      ./snes9x-gtk
-      ./dolphin
+      ./melonDS
       ./mupen64plus
-      ./rpcs3
+      ./pcsx2
       ./retroarch-beetle-psx
       ./retroarch-parallel-64
+      ./rpcs3
+      ./snes9x-gtk
     ];
   }
