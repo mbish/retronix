@@ -10,7 +10,7 @@ pkgs.rustPlatform.buildRustPackage rec {
   buildInputs = [pkgs.openssl pkgs.zip pkgs.unzip pkgs.p7zip pkgs.fuse pkgs.fuse3];
 
   src = inputs.oxyromon;
-  cargoHash = "sha256-t/6nMYqwAMB6PitkiHTz1dJ9M0Kh7sHTkNUwRzNKwEQ=";
+  cargoHash = "sha256-lFqIVA5KMfSIaHhQ7u3/HoGHErlTSXB6XXQYysKHmzM=";
   cargoBuildFlags = [
     "--workspace"
   ];
