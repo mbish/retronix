@@ -1,37 +1,15 @@
 {
   "nodes": {
-    "fenix": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "rust-analyzer-src": "rust-analyzer-src"
-      },
-      "locked": {
-        "lastModified": 1677738300,
-        "narHash": "sha256-FdlBSMDjT0BtRt/0iJVinZI62C3mfTENxYQiZKJnlz0=",
-        "owner": "nix-community",
-        "repo": "fenix",
-        "rev": "24d0d5b664d1b179e391cec97838c90f5a191c86",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "fenix",
-        "rev": "24d0d5b664d1b179e391cec97838c90f5a191c86",
-        "type": "github"
-      }
-    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1726560853,
-        "narHash": "sha256-X6rJYSESBVr3hBoH0WbKE5KvhPU5bloyZ2L4K60/fPQ=",
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "c1dfcf08411b08f6b8615f7d8971a2bfa81d5e8a",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
         "type": "github"
       },
       "original": {
@@ -50,11 +28,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1721487308,
-        "narHash": "sha256-senqeGAmtkSsUZ5SoupHGrDm5MCs2ZNpo7NnOrhxANU=",
+        "lastModified": 1742749541,
+        "narHash": "sha256-IHXotZ7xCoV7bo2MUwtVy2GPM7293/+NpQnWdqGcBr8=",
         "owner": "mbish",
         "repo": "gamelauncher",
-        "rev": "9160cc05d5982606df75b6494d8e54ccfd563778",
+        "rev": "b8fc18f038e23a22781a4b3a2ebea635a83b562a",
         "type": "github"
       },
       "original": {
@@ -102,16 +80,16 @@
     "mp64-convert": {
       "flake": false,
       "locked": {
-        "lastModified": 1680065355,
-        "narHash": "sha256-8vaFEKEmlEYbGMntNDTiIa2rRK9euXgCvYlDihn/O+E=",
+        "lastModified": 1725409089,
+        "narHash": "sha256-4V6IUGuRFUA6b52bvpKZ+udmq+Fr+XYBpoxHhh13KUc=",
         "owner": "drehren",
         "repo": "ra_mp64_srm_convert",
-        "rev": "d8f59d5875896b7e9cc1dc4b5f5df087804f7378",
+        "rev": "83db9677a31100ba651b856a302950780f8f8294",
         "type": "github"
       },
       "original": {
         "owner": "drehren",
-        "ref": "v1.0",
+        "ref": "v1.1.1",
         "repo": "ra_mp64_srm_convert",
         "type": "github"
       }
@@ -150,11 +128,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1731139594,
-        "narHash": "sha256-IigrKK3vYRpUu+HEjPL/phrfh7Ox881er1UEsZvw9Q4=",
+        "lastModified": 1744098102,
+        "narHash": "sha256-tzCdyIJj9AjysC3OuKA+tMD/kDEDAF9mICPDU7ix0JA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "76612b17c0ce71689921ca12d9ffdc9c23ce40b2",
+        "rev": "c8cd81426f45942bb2906d5ed2fe21d2f19d95b7",
         "type": "github"
       },
       "original": {
@@ -166,11 +144,11 @@
     "oxyromon": {
       "flake": false,
       "locked": {
-        "lastModified": 1730922155,
-        "narHash": "sha256-PL7P0NXmPw59pw99lg18jI5j77PJQnkTZCRU4SiohkA=",
+        "lastModified": 1740480791,
+        "narHash": "sha256-OLgeHTQBLonzAuLfvdOSBpmdIGL8iEPnW1Rxn5poyiU=",
         "owner": "alucryd",
         "repo": "oxyromon",
-        "rev": "f6d871d6b66121f3ae893d11a8ea9b2256eb282d",
+        "rev": "60db2c58a16f8d03ad51d2818acb0a979280a56f",
         "type": "github"
       },
       "original": {
@@ -183,11 +161,11 @@
     "pegasus-frontend": {
       "flake": false,
       "locked": {
-        "lastModified": 1726476889,
-        "narHash": "sha256-dKBQn8frpce8xtIi5nSN6oBINZLGPzj4UZ6DssYe5xA=",
+        "lastModified": 1743450861,
+        "narHash": "sha256-H3dohbcSMdo7n7ocMOmEitU5CN/Ch6ucd8giSEwrDkA=",
         "ref": "refs/heads/master",
-        "rev": "c3462e68bf3a178420b44f356998255f8d82a113",
-        "revCount": 1945,
+        "rev": "66433328e8524b62546802990a7f316f37f879dd",
+        "revCount": 1952,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/mmatyas/pegasus-frontend.git?rev=weekly_2024w38"
@@ -200,7 +178,6 @@
     },
     "root": {
       "inputs": {
-        "fenix": "fenix",
         "flake-utils": "flake-utils",
         "gamelauncher": "gamelauncher",
         "moltengamepad": "moltengamepad",
@@ -210,23 +187,6 @@
         "oxyromon": "oxyromon",
         "pegasus-frontend": "pegasus-frontend",
         "skyscraper": "skyscraper"
-      }
-    },
-    "rust-analyzer-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1677674455,
-        "narHash": "sha256-/RVknUYqI80b7k1OGbsWfjWTXDX8gnM/UmcbLytiGds=",
-        "owner": "rust-lang",
-        "repo": "rust-analyzer",
-        "rev": "32424d0aba3f9e20576aff0a1c89e01ac3ad8b62",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rust-lang",
-        "ref": "nightly",
-        "repo": "rust-analyzer",
-        "type": "github"
       }
     },
     "skyscraper": {

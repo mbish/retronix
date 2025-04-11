@@ -8,7 +8,7 @@
       flake = false;
     };
     pegasus-frontend = {
-      url = "https://github.com/mmatyas/pegasus-frontend.git?rev=weekly_2024w38";
+      url = "https://github.com/mmatyas/pegasus-frontend.git";
       flake = false;
       type = "git";
       submodules = true;
@@ -30,12 +30,8 @@
       url = "github:alucryd/oxyromon/develop";
       flake = false;
     };
-    fenix = {
-      url = "github:nix-community/fenix/24d0d5b664d1b179e391cec97838c90f5a191c86";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     mp64-convert = {
-      url = "github:drehren/ra_mp64_srm_convert/v1.0";
+      url = "github:drehren/ra_mp64_srm_convert/v1.1.1";
       flake = false;
     };
   };
