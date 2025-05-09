@@ -20,12 +20,11 @@ Core:
   SPU loop detection: false
   Max SPURS Threads: 6
   SPU Block Size: Safe
-  Accurate GETLLAR: false
   Accurate SPU DMA: false
   Accurate SPU Reservations: true
   Accurate Cache Line Stores: false
   Accurate RSX reservation access: false
-  RSX FIFO Accuracy: Fast
+  RSX FIFO Accuracy: Atomic
   SPU Verification: true
   SPU Cache: true
   SPU Profiler: false
@@ -46,7 +45,8 @@ Core:
   PPU Set FPCC Bits: false
   Debug Console Mode: false
   Hook static functions: false
-  Libraries Control: []
+  Libraries Control:
+    []
   HLE lwmutex: false
   SPU LLVM Lower Bound: 0
   SPU LLVM Upper Bound: 18446744073709551615
@@ -62,6 +62,7 @@ Core:
   Performance Report Threshold: 500
   Enable Performance Report: false
   Assume External Debugger: false
+  Accurate GETLLAR: false
 VFS:
   Enable /host_root/: false
   Initialize Directories: true
@@ -121,6 +122,7 @@ Video:
   DECR memory layout: false
   Allow Host GPU Labels: false
   Disable MSL Fast Math: false
+  Output Scaling Mode: Bilinear
   Vulkan:
     Adapter: AMD Radeon RX 6600 (RADV NAVI23)
     Force FIFO present mode: false
@@ -186,7 +188,6 @@ Input/Output:
   Buzz emulated controller: "Null"
   Turntable emulated controller: "Null"
   GHLtar emulated controller: "Null"
-  GameTablet emulated controller: Disabled
   Pad handler mode: Single-threaded
   Keep pads connected: false
   Pad handler sleep (microseconds): 1000
@@ -194,6 +195,9 @@ Input/Output:
   Show move cursor: false
   Lock overlay input to player one: false
   Emulated Midi devices: Keyboardßßß@@@Keyboardßßß@@@Keyboardßßß@@@
+  Load SDL GameController Mappings: true
+  IO Debug overlay: false
+  GameTablet emulated controller: Disabled
 System:
   License Area: SCEA
   Language: English (US)
@@ -213,11 +217,14 @@ Net:
   IP swap list: ""
   UPNP Enabled: false
   PSN status: Disconnected
+  PSN Country: us
 Savestate:
-  Start Paused 2: true
+  Start Paused: false
   Suspend Emulation Savestate Mode: false
+  Compatible Savestate Mode: false
   Inspection Mode Savestates: false
   Save Disc Game Data: false
+  Start Paused 2: true
 Miscellaneous:
   Automatically start games after boot: true
   Exit RPCS3 when process finishes: false
@@ -225,10 +232,15 @@ Miscellaneous:
   Start games in fullscreen mode: true
   Prevent display sleep while running games: true
   Show trophy popups: true
+  Show RPCN popups: true
   Show shader compilation hint: true
   Show PPU compilation hint: true
+  Show pressure intensity toggle hint: true
+  Show analog limiter toggle hint: true
+  Show mouse and keyboard toggle hint: true
   Use native user interface: true
   GDB Server: 127.0.0.1:2345
   Silence All Logs: false
   Window Title Format: "FPS: %F | %R | %V | %T [%t]"
+  Pause Emulation During Home Menu: false
 Log: {}
