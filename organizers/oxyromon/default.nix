@@ -78,6 +78,11 @@ in
         description = "true will elect ROMs regardless of them being available, false will only elect available ROMs, defaults to false";
         default = false;
       };
+      extra-dats = mkOption {
+        type = types.listOf types.path;
+        description = "Extra dat files to import";
+        default = [];
+      };
     };
     config = {
       retronix.systems = let
@@ -96,7 +101,7 @@ in
       home.activation = let
         dats = concatMap (s: s.datFiles) (builtins.attrValues retronix.systems);
         importDat = dat: "${pkgs.oxyromon}/bin/oxyromon import-dats ${dat}";
-        importDats = d: builtins.concatStringsSep "\n" (map importDat d);
+        importDats = d: builtins.concatStringsSep "\n" (map importDat (d ++ cfg.extra-dats));
       in {
         oxyromonSettings = lib.hm.dag.entryAfter ["linkGeneration"] ''
           ${mkOxyromonConfigStringOption "ROM_DIRECTORY" cfg.romDirectory}
