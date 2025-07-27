@@ -13,6 +13,7 @@ in
       ./flycast
       ./mednafen
       ./melonDS
+      ./azahar
       ./mupen64plus
       ./pcsx2
       ./retroarch-beetle-psx

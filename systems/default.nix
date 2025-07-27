@@ -9,6 +9,7 @@ in
   with lib; {
     imports = [
       ./dreamcast
+      ./3ds
       ./nds
       ./gamegear
       ./gb
