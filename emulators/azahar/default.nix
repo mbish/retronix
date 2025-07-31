@@ -15,7 +15,7 @@ in
       // {
         enable = mkEnableOption "Azahar retronix configuration";
         systems = mkOption {
-          default = ["3ds"];
+          default = ["_3ds"];
         };
         launchCommand = mkOption {
           default = "${pkgs.azahar}/bin/azhar -f {{gamepath}}";
