@@ -28,11 +28,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1742749541,
-        "narHash": "sha256-IHXotZ7xCoV7bo2MUwtVy2GPM7293/+NpQnWdqGcBr8=",
+        "lastModified": 1777275187,
+        "narHash": "sha256-QiC4zBhDArygrdt+ZDr8ACPN6Q+jaDLU1fcdFDAq+es=",
         "owner": "mbish",
         "repo": "gamelauncher",
-        "rev": "b8fc18f038e23a22781a4b3a2ebea635a83b562a",
+        "rev": "0822f61a4bfd241a5d1d39a2a71951255081c5da",
         "type": "github"
       },
       "original": {
@@ -46,11 +46,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1721579835,
-        "narHash": "sha256-b9PM+/gTVYdp59ZHCYtR5EqggrBDELrgcW1T3txoXw4=",
+        "lastModified": 1777274939,
+        "narHash": "sha256-D65fJrw9fBJhqrn97ZrDjRU5NAZDBCvCFBaVz6J7DU8=",
         "owner": "mbish",
         "repo": "MoltenGamepad",
-        "rev": "3f83c3055362dfb045e478a5d1000c564749c901",
+        "rev": "17316343ee5d21d3355f96902c24daaca9544975",
         "type": "github"
       },
       "original": {
@@ -64,11 +64,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1721588116,
-        "narHash": "sha256-nTy0yoWfP6UBpQ05yLV765axdHUgx5Hjw/m3aTFc1+8=",
+        "lastModified": 1777274462,
+        "narHash": "sha256-/wL7C8cgMC91wdm0XE/h5Fz1PIduGs59r9vgo8bXDUc=",
         "owner": "mbish",
         "repo": "moltengamepadctl",
-        "rev": "dd62048e290fe73bf22f84a12cc5d433db635043",
+        "rev": "cf97f33650931c96c4eb0e85a6916bd4c51255cb",
         "type": "github"
       },
       "original": {
@@ -96,32 +96,32 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1720535198,
-        "narHash": "sha256-zwVvxrdIzralnSbcpghA92tWu2DV2lwv89xZc8MTrbg=",
+        "lastModified": 1776877367,
+        "narHash": "sha256-EHq1/OX139R1RvBzOJ0aMRT3xnWyqtHBRUBuO1gFzjI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "205fd4226592cc83fd4c0885a3e4c9c400efabb5",
+        "rev": "0726a0ecb6d4e08f6adced58726b95db924cef57",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-23.11",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1720535198,
-        "narHash": "sha256-zwVvxrdIzralnSbcpghA92tWu2DV2lwv89xZc8MTrbg=",
+        "lastModified": 1776877367,
+        "narHash": "sha256-EHq1/OX139R1RvBzOJ0aMRT3xnWyqtHBRUBuO1gFzjI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "205fd4226592cc83fd4c0885a3e4c9c400efabb5",
+        "rev": "0726a0ecb6d4e08f6adced58726b95db924cef57",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-23.11",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -161,19 +161,19 @@
     "pegasus-frontend": {
       "flake": false,
       "locked": {
-        "lastModified": 1743450861,
-        "narHash": "sha256-H3dohbcSMdo7n7ocMOmEitU5CN/Ch6ucd8giSEwrDkA=",
+        "lastModified": 1776024846,
+        "narHash": "sha256-VyaY7KdliGeyqj4mWJFlDci8wHbcy2Rgge/lbnxikUA=",
         "ref": "refs/heads/master",
-        "rev": "66433328e8524b62546802990a7f316f37f879dd",
-        "revCount": 1952,
+        "rev": "6740ab6506f2a3f1139f3ee0db10c99c818ab5c2",
+        "revCount": 1960,
         "submodules": true,
         "type": "git",
-        "url": "https://github.com/mmatyas/pegasus-frontend.git?rev=weekly_2024w38"
+        "url": "https://github.com/mmatyas/pegasus-frontend.git"
       },
       "original": {
         "submodules": true,
         "type": "git",
-        "url": "https://github.com/mmatyas/pegasus-frontend.git?rev=weekly_2024w38"
+        "url": "https://github.com/mmatyas/pegasus-frontend.git"
       }
     },
     "root": {

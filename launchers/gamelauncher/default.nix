@@ -25,7 +25,7 @@ in
       command = mkOption {
         type = lib.types.path;
         description = "Path to the gamelauncher binary";
-        default = "${config.retronix.inputs.gamelauncher.packages."${system}".default}/bin/gamelauncher";
+        default = "${pkgs.gamelauncher}/bin/gamelauncher";
       };
       wrapper = mkOption {
         type = types.nullOr types.path;

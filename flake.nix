@@ -57,13 +57,16 @@
           pkgs = import inputs.nixpkgs {
             inherit system;
             overlays = [
+              inputs.moltengamepadctl.overlays.${system}.default
+              inputs.moltengamepad.overlays.${system}.default
+              inputs.gamelauncher.overlays.${system}.default
             ];
           };
         in
           _: prev: {
-            gamelauncher = inputs.gamelauncher.packages."${system}".default;
-            moltengamepad = inputs.moltengamepad.packages."${system}".default;
-            moltengamepadctl = inputs.moltengamepadctl.packages."${system}".default;
+            gamelauncher = pkgs.gamelauncher;
+            moltengamepad = pkgs.moltengamepad;
+            moltengamepadctl = pkgs.moltengamepadctl;
             mp64-convert = import ./derivations/ra_mp64_srm_convert {inherit pkgs inputs system;};
             oxyromon = import ./derivations/oxyromon {inherit pkgs lib inputs;};
             pegasus-frontend = import ./derivations/pegasus-frontend {inherit pkgs lib inputs;};
