@@ -67,7 +67,6 @@ in
       mkIf cfg.enable (mkMerge [
         (subtypes.commonEmulationConfig cfg)
         {
-          nixpkgs.config.allowUnfree = true;
           home.file = let
             mappings = map (x: {"${savePath}/input_configs/global/${x.name}.yml".source = x.config;}) cfg.mappings;
           in
