@@ -41,9 +41,26 @@
         "type": "github"
       }
     },
+    "mg_nixpkgs": {
+      "locked": {
+        "lastModified": 1720535198,
+        "narHash": "sha256-zwVvxrdIzralnSbcpghA92tWu2DV2lwv89xZc8MTrbg=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "205fd4226592cc83fd4c0885a3e4c9c400efabb5",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixos-23.11",
+        "type": "indirect"
+      }
+    },
     "moltengamepad": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "mg_nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1777325255,
@@ -61,14 +78,16 @@
     },
     "moltengamepadctl": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": [
+          "mg_nixpkgs"
+        ]
       },
       "locked": {
-        "lastModified": 1777274462,
-        "narHash": "sha256-/wL7C8cgMC91wdm0XE/h5Fz1PIduGs59r9vgo8bXDUc=",
+        "lastModified": 1777470680,
+        "narHash": "sha256-qT5aClogck6mSh/eoMN3MPaYO3CGJYNt49ljJp4GAQk=",
         "owner": "mbish",
         "repo": "moltengamepadctl",
-        "rev": "cf97f33650931c96c4eb0e85a6916bd4c51255cb",
+        "rev": "eed2f4278e12976670ea3283e60ac22d7cbc2feb",
         "type": "github"
       },
       "original": {
@@ -95,38 +114,6 @@
       }
     },
     "nixpkgs": {
-      "locked": {
-        "lastModified": 1720535198,
-        "narHash": "sha256-zwVvxrdIzralnSbcpghA92tWu2DV2lwv89xZc8MTrbg=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "205fd4226592cc83fd4c0885a3e4c9c400efabb5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-23.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1776877367,
-        "narHash": "sha256-EHq1/OX139R1RvBzOJ0aMRT3xnWyqtHBRUBuO1gFzjI=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "0726a0ecb6d4e08f6adced58726b95db924cef57",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
       "locked": {
         "lastModified": 1744098102,
         "narHash": "sha256-tzCdyIJj9AjysC3OuKA+tMD/kDEDAF9mICPDU7ix0JA=",
@@ -180,10 +167,11 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "gamelauncher": "gamelauncher",
+        "mg_nixpkgs": "mg_nixpkgs",
         "moltengamepad": "moltengamepad",
         "moltengamepadctl": "moltengamepadctl",
         "mp64-convert": "mp64-convert",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs",
         "oxyromon": "oxyromon",
         "pegasus-frontend": "pegasus-frontend",
         "skyscraper": "skyscraper"

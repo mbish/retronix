@@ -2,6 +2,7 @@
   description = "Retronix a hackable nix emulation platform";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    mg_nixpkgs.url = "nixpkgs/nixos-23.11";
     flake-utils.url = "github:numtide/flake-utils";
     skyscraper = {
       url = "github:detain/skyscraper";
@@ -21,10 +22,12 @@
     moltengamepadctl = {
       url = "github:mbish/moltengamepadctl";
       flake = true;
+      inputs.nixpkgs.follows = "mg_nixpkgs";
     };
     moltengamepad = {
       url = "github:mbish/MoltenGamepad";
       flake = true;
+      inputs.nixpkgs.follows = "mg_nixpkgs";
     };
     oxyromon = {
       url = "github:alucryd/oxyromon/develop";
