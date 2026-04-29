@@ -21,7 +21,7 @@ in
           default = ./settings.bml;
         };
         systems = mkOption {
-          default = ["n64"];
+          default = ["n64" "snes"];
         };
         launchCommand = mkOption {
           default = "${pkgs.ares}/bin/ares --fullscreen {{gamepath}}";

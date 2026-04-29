@@ -28,11 +28,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777275903,
-        "narHash": "sha256-aPPCVs1mDEvbMLddvoBoAnjKW8uYu0L6tMOHGZFd+pI=",
+        "lastModified": 1777502572,
+        "narHash": "sha256-2rblhjTmtufhJGzIUxtjimSOW7WGk3unx/El6F6zh+A=",
         "owner": "mbish",
         "repo": "gamelauncher",
-        "rev": "8f37728f89d323035f50f0732366ef32b124d9e0",
+        "rev": "ee814e5e3889a00c6ef4aea7a057a49fd0ba85c3",
         "type": "github"
       },
       "original": {
