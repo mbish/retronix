@@ -30,8 +30,10 @@ in
         else command;
       launchScript = precommands: launchCommand: postcommands: let
         script = pkgs.writeShellScriptBin "launch" (expand ''
+          trap 'kill $(jobs -p)' QUIT HUP
           ${builtins.concatStringsSep "\n" precommands}
-          ${wrapped launchCommand}
+          ${wrapped launchCommand} &
+          wait
           ${builtins.concatStringsSep "\n" postcommands}
         '');
       in "${script}/bin/launch {{gamepath}} {{gamedir}} {{basename}}";
